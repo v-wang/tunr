@@ -1,0 +1,13 @@
+{% extends 'tunr/base.html' %} {% block content %}
+<h1>New Song</h1>
+<form method="POST" class="song-form">
+  <!-- for security, need to pass token -->
+  <!-- making sure form is not being forged from different site -->
+  {% csrf_token %}
+  <!-- print form as paragraph object -->
+  <!-- creates entire form -->
+  {{ form.as_p }}
+  <button type="submit" class="save btn btn-default">Save</button>
+</form>
+
+{% endblock %}
