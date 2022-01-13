@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'tunr',
     'django_extensions',
     'accounts',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,12 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 WSGI_APPLICATION = 'tunr_django.wsgi.application'
 
